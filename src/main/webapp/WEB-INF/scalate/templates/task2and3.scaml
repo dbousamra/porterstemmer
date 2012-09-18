@@ -1,0 +1,35 @@
+-@ val stemmed: String = ""
+-@ val language: String = ""
+%div.row
+  %div.hero-unit
+    %h1
+      Task 2 and 3
+    %p
+      This task is to demonstrate automatic detection of text and stemming in the detected language.
+
+%div.row
+  %div.span12
+    %h2
+      Automatic detection of text language and stemming:
+
+    %p
+      Use this form to stem some input text. The language will be detected automatically.
+
+  %div.span6
+    %h2 
+      Input Text
+
+    %form{:method => "POST", :action => "/stem"}
+      %textarea{:rows => 6, :name => "msg"}(style="width:100%;")
+
+
+      %div.form-actions
+        %button.btn.btn-primary{:type => "submit", :name => "msg"}
+          Stem
+
+  %div.span6
+    %h2
+      - val lang = if (language.length > 1) { "Stemmed Text in " + language } else { "Stemmed Text" }
+      = lang
+
+    %textarea{:rows => 6, :name => "dom"}(style="width:100%;") #{stemmed}

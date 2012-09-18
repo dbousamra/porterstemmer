@@ -21,8 +21,7 @@ object LanguageDetector {
     val words = lines.flatMap(getWordsFromLine)
     val englishScore = englishStopWords.foldLeft(0){(count, word) => count + getCountOfWord(words, word) }
     val frenchScore = frenchStopWords.foldLeft(0){(count, word) => count + getCountOfWord(words, word) }
-    println(englishScore + " " + frenchScore)
-    if (englishScore > frenchScore) "english" else "french"
+    if (englishScore > frenchScore) "English" else "French"
   }
   
   def getCountOfWord(words: List[String], word: String) = {

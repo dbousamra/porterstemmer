@@ -1,0 +1,96 @@
+%div.row
+  %div.hero-unit
+    %h1
+      Task 1.2
+    %p
+      This task is to demonstrate the differences between successive layers of the Porter stemmer through a couple of examples.
+      
+%div.row
+  %p
+    Each layer of the Porter stemmer performs a specific stemming function. Using the words <strong>Generalization</strong> and <strong>Oscillator</strong>, you can see how the differences:
+
+  %h2
+    Oscillator
+  
+  %table.table.table-striped
+    - import stemmer.PorterStemmer
+    %thead>
+      %tr>
+        %th
+          Step
+        %th
+          Stemmed result
+    %tbody
+      %tr
+        %td
+          1
+        %td
+          = PorterStemmer.EnglishStemming.oneStep("oscillator").toString
+      %tr
+        %td
+          2
+        %td
+          = PorterStemmer.EnglishStemming.twoStep("oscillator").toString
+      %tr
+        %td
+          3
+        %td
+          = PorterStemmer.EnglishStemming.threeStep("oscillator").toString
+      %tr
+        %td
+          4
+        %td
+          = PorterStemmer.EnglishStemming.fourStep("oscillator").toString
+      %tr
+        %td
+          5
+        %td
+          = PorterStemmer.EnglishStemming.fiveStep("oscillator").toString
+      %tr
+        %td
+          6
+        %td
+          = PorterStemmer.EnglishStemming.sixStep("oscillator").toString
+
+  %h2
+    Generalization
+  
+  %table.table.table-striped
+    - import stemmer.PorterStemmer
+    %thead>
+      %tr>
+        %th
+          Step
+        %th
+          Stemmed result
+    %tbody
+      %tr
+        %td
+          1
+        %td
+          = PorterStemmer.EnglishStemming.oneStep("generalization").toString
+      %tr
+        %td
+          2
+        %td
+          = PorterStemmer.EnglishStemming.twoStep("generalization").toString
+      %tr
+        %td
+          3
+        %td
+          = PorterStemmer.EnglishStemming.threeStep("generalization").toString
+      %tr
+        %td
+          4
+        %td
+          = PorterStemmer.EnglishStemming.fourStep("generalization").toString
+      %tr
+        %td
+          5
+        %td
+          = PorterStemmer.EnglishStemming.fiveStep("generalization").toString
+      %tr
+        %td
+          6
+        %td
+          = PorterStemmer.EnglishStemming.sixStep("generalization").toString

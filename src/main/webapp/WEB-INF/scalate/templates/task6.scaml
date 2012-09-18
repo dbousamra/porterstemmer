@@ -1,0 +1,55 @@
+%div.row
+  %div.hero-unit
+    %h1
+      Task 6
+    %p
+      This task is to demonstrate the use of WordNet to expand nouns with their synonyms and their hypernyms.
+
+%div.row  
+  %h2
+    Synonyms:
+
+  %table.table.table-striped
+    - import stemmer.PorterStemmer
+    %thead>
+      %tr>
+        %th
+          Step
+        %th
+          Stemmed result
+    %tbody
+    - import wordnet.WordNet
+    - import brill.BrillTaggerParser
+    -@ val words: List[String] = BrillTaggerParser.getSplitted
+    - words.foreach { word => 
+    - val synonyms:  List[List[edu.mit.jwi.item.IWord]] = WordNet.getSynonymGroups(word)
+    %tr
+      %td
+        = word
+      %td
+        = synonyms.map(_.map(_.getLemma()).mkString(", ")).mkString(" | ")
+    - }
+
+  %h2
+    Hypernyms:
+
+  %table.table.table-striped
+    - import stemmer.PorterStemmer
+    %thead>
+      %tr>
+        %th
+          Step
+        %th
+          Stemmed result
+    %tbody
+    - import wordnet.WordNet
+    - import brill.BrillTaggerParser
+    -@ val words: List[String] = BrillTaggerParser.getSplitted
+    - words.foreach { word => 
+    - val hyponyms:  List[List[edu.mit.jwi.item.IWord]] = WordNet.getHyponyms(word)
+    %tr
+      %td
+        = word
+      %td
+        = hyponyms.map(_.map(_.getLemma()).mkString(", ")).mkString(" | ")
+    - }

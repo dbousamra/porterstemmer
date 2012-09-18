@@ -1,0 +1,139 @@
+%div.row
+  %div.hero-unit
+    %h1
+      Task 1.1
+    %p
+      This task is to demonstrate false positive and false negative examples using my Porter Stemmer implementation.
+
+%div.row  
+  %h2
+    Usage:
+  %p
+    You use the PorterStemmer like this:
+    %pre><
+      PorterStemmer("organization")("English")
+
+  %h2
+    False Positives:
+  %p
+    These words should <strong>not</strong> stem to the same as each other. but they do:
+
+
+  %table.table.table-striped
+    - import stemmer.PorterStemmer
+    %thead>
+      %tr>
+        %th
+          Input case
+        %th
+          First word stemmed
+        %th
+          Second word stemmed
+
+    %tbody
+      %tr
+        %td
+          <strong>Generalization</strong> should not stem to the same as <strong>Generic</strong>
+        %td
+          = PorterStemmer("generalization")("English")
+        %td
+          = PorterStemmer("generic")("English")
+      %tr
+        %td
+          <strong>Organization</strong> should not stem to the same as <strong>Organ</strong>
+        %td
+          = PorterStemmer("organization")("English")
+        %td
+          = PorterStemmer("organ")("English")
+      %tr
+        %td
+          <strong>Numerical</strong> should not stem to the same as <strong>Numerous</strong>
+        %td
+          = PorterStemmer("numerical")("English")
+        %td
+          = PorterStemmer("numerous")("English")
+      %tr
+        %td
+          <strong>University</strong> should not stem to the same as <strong>Universe</strong>
+        %td
+          = PorterStemmer("University")("English")
+        %td
+          = PorterStemmer("Universe")("English")
+      %tr
+        %td
+          <strong>Addition</strong> should not stem to the same as <strong>Additive</strong>
+        %td
+          = PorterStemmer("Addition")("English")
+        %td
+          = PorterStemmer("Additive")("English")
+
+      %tr
+        %td
+          <strong>Neglibible</strong> should not stem to the same as <strong>Negligent</strong>
+        %td
+          = PorterStemmer("Neglibible")("English")
+        %td
+          = PorterStemmer("Negligent")("English")
+
+  %h2
+    False Negatives:
+
+  %p
+    These words <strong>should</strong> stem to the same as each other, but they don't:
+
+  %table.table.table-striped
+    - import stemmer.PorterStemmer
+    %thead>
+      %tr>
+        %th
+          Input case
+        %th
+          First word stemmed
+        %th
+          Second word stemmed
+
+    %tbody
+      %tr
+        %td
+          <strong>European</strong> should not stem to the same as <strong>Europe</strong>
+        %td
+          = PorterStemmer("European")("English")
+        %td
+          = PorterStemmer("Europe")("English")
+      %tr
+        %td
+          <strong>Cylinder</strong> should not stem to the same as <strong>Cylindrical</strong>
+        %td
+          = PorterStemmer("Cylinder")("English")
+        %td
+          = PorterStemmer("Cylindrical")("English")
+      %tr
+        %td
+          <strong>Matrices</strong> should not stem to the same as <strong>Matrix</strong>
+        %td
+          = PorterStemmer("Matrices")("English")
+        %td
+          = PorterStemmer("Matrix")("English")
+      %tr
+        %td
+          <strong>Urgency</strong> should not stem to the same as <strong>Urgent</strong>
+        %td
+          = PorterStemmer("Urgency")("English")
+        %td
+          = PorterStemmer("Urgent")("English")
+      %tr
+        %td
+          <strong>Create</strong> should not stem to the same as <strong>Creation</strong>
+        %td
+          = PorterStemmer("Create")("English")
+        %td
+          = PorterStemmer("Creation")("English")
+
+      %tr
+        %td
+          <strong>Analysis</strong> should not stem to the same as <strong>Analyses</strong>
+        %td
+          = PorterStemmer("Analysis")("English")
+        %td
+          = PorterStemmer("Analyses")("English")
+

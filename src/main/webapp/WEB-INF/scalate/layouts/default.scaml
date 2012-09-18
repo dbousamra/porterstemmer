@@ -1,0 +1,49 @@
+-@ val title: String = "INB344 - Assessment 1"
+-@ val headline: String = title
+-@ val body: String
+
+!!!
+%html
+  %head
+    %title= title
+    %link(rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css")
+    %link(rel="stylesheet" type="text/css" href="/static/css/bootstrap-responsive.min.css")
+  %body(style="padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */")
+    %div.navbar.navbar-fixed-top.navbar-inverse
+      %div.navbar-inner
+        %div.container
+          %a.btn.btn-navbar(data-toggle="collapse" data-target=".nav-collapse")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand(href="#")
+            INB344 - Assessment 1
+          %div.nav-collapse
+            %ul.nav
+              %li
+                %a(href="/task1_1")
+                  Task 1.1
+              %li
+                %a(href="/task1_2")
+                  Task 1.2
+              %li
+                %a(href="task2and3")
+                  Task 2 and 3
+              %li
+                %a(href="task4")
+                  Task 4
+              %li
+                %a(href="task5")
+                  Task 5
+              %li
+                %a(href="task6")
+                  Task 6
+
+
+    %div.container
+      != body
+
+      %hr
+
+  %script(type="text/javascript" src="/assets/jquery/jquery-1.7.2.min.js")
+  %script(type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js")

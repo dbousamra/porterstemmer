@@ -13,8 +13,8 @@ object PorterStemmer {
 
   def stem(word: String,  language: String): String = {
     language match {
-      case "english" => EnglishStemming.sixStep(word).toString
-      case "french" => FrenchStemming.stemWord(word).toString
+      case "English" => EnglishStemming.sixStep(word).toString
+      case "French" => FrenchStemming.stemWord(word).toString
       case _ => ""
     }
 
@@ -38,7 +38,7 @@ object PorterStemmer {
         stem = stem.applyReplaces(m > 5)("s" -> "")
         stem = stem.applyReplaces(m > 5)("r" -> "")
         stem = stem.applyReplaces(m > 5)("e" -> "")
-        stem = stem.applyReplaces(m > 5)("Ž" -> "")
+        stem = stem.applyReplaces(m > 5)("ï¿½" -> "")
 
       }
       stem = stem.applyReplaces("ent" -> "")
