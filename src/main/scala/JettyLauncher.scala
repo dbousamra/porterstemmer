@@ -11,7 +11,7 @@ object JettyLauncher {
 
     context setContextPath "/"
     context.setResourceBase("src/main/webapp")
-    context.addFilter(classOf[MyScalatraFilter], "/*")
+   // context.addFilter(classOf[MyScalatraFilter], "/*")
     context.addServlet(classOf[DefaultServlet], "/")
 
     server.setHandler(context)
