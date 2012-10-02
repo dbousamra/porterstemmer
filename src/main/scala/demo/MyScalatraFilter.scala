@@ -1,4 +1,4 @@
-package demo
+package net.srirangan
 import org.scalatra._
 import java.net.URL
 import scalate.ScalateSupport

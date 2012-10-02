@@ -53,7 +53,7 @@ object WordNet extends App {
         val synsets = synonymIds.map { w => w.getSynset().getRelatedSynsets(Pointer.HYPERNYM) }
         
         
-        synsets.map(sidList => sidList.asScala.map(dict.getSynset(_).getWords().asScala.toList)).flatten.toList
+        synsets.map(sidList => sidList.asScala.map(dict.getSynset(_).getWords().asScala.toList )).flatten.toList
         
 //        words.map(wordList => wordList.asScala.toList.filter(w => w.getLemma() != word)).toList.filterNot(l => l.isEmpty)
       }
