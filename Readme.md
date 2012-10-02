@@ -1,15 +1,18 @@
-This is the Scala implementation of Porter stemming algorithm. It was greatly inspired by [Snowball implementation](http://snowball.tartarus.org/algorithms/porter/stemmer.html).
+This is a Scala implementation of some stemming exercises designed to highlight how the Porter algorithm works. The credit goes to [aztek](https://github.com/aztek/) who wrote the initial code, that I refactored and based my examples off.
 
-This library uses [Maven](http://maven.apache.org/). To install, do the following:
+Usage:
+======
 
-1. `git clone https://github.com/aztek/porterstemmer`
-2. `cd porterstemmer`
-3. `mvn install`
+Running this project is quite simple. Make sure you have SBT installed (Scala Build Tool) and simple navigate to the directory and run SBT:
+```shell
+cd porterstemmer
 
-To use it in your project, put this dependency in your `pom.xml`:
+sbt
+```
 
-    <dependency>
-        <groupId>com.github.aztek</groupId>
-        <artifactId>porterstemmer</artifactId>
-        <version>0.0.1</version>
-    </dependency>
+Once SBT has loaded, you can use the Scalatra commands to run the webserver:
+```shell
+container:start
+```
+
+And then browse to http://localhost:8080/
